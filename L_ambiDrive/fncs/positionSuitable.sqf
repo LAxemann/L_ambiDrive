@@ -15,7 +15,9 @@ params [
 	["_minDist", 0]
 ];
 
+private _minDistReal = _minDist;
 private _suitable 	= true;
+private _multiplierValue = (L_ambiDrive_elevationMultiplier - 1) max 0;
 
 // Check if position lies within blacklist
 
@@ -34,8 +36,14 @@ if (_suitable) then {
 
 // Check if position is too close to players
 if (_suitable) then {
-	{
-		if ((_searchPos distance _x) < _minDist) exitWith {_suitable = false};
+	{	
+		if (L_ambiDrive_increaseWithElevation) then {
+			_minDist = [eyePos _x,ATLtoASL _searchPos,_minDistReal,_multiplierValue] call L_ambiDrive_fnc_getElevationMultiplicatorValue;
+			hintSilent format ["Actual dist: %1\nWith diff: %2",_minDistReal,_minDist];
+		} else {
+			_minDist = _minDistReal;
+		};
+		if ((_searchPos distance2d _x) < _minDist) exitWith {_suitable = false};
 	} count L_ambiDrive_players;
 };
 

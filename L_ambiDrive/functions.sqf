@@ -16,6 +16,9 @@ L_ambiDrive_fnc_findRoad 				= compile preprocessFileLineNumbers "L_ambiDrive\fn
 L_ambiDrive_fnc_getPlayers				= compile preprocessFileLineNumbers "L_ambiDrive\fncs\getPlayers.sqf";
 
 // -----------------------------------------------------------------------------
+L_ambiDrive_fnc_getElevationMultiplicatorValue = compile preprocessFileLineNumbers "L_ambiDrive\fncs\getElevationMultiplicatorValue.sqf";
+
+// -----------------------------------------------------------------------------
 L_ambiDrive_fnc_getRandomPos			= compile preprocessFileLineNumbers "L_ambiDrive\fncs\getRandomPos.sqf";
 
 // -----------------------------------------------------------------------------
