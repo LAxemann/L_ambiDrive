@@ -39,7 +39,6 @@ if (_suitable) then {
 	{	
 		if (L_ambiDrive_increaseWithElevation) then {
 			_minDist = [eyePos _x,ATLtoASL _searchPos,_minDistReal,_multiplierValue] call L_ambiDrive_fnc_getElevationMultiplicatorValue;
-			hintSilent format ["Actual dist: %1\nWith diff: %2",_minDistReal,_minDist];
 		} else {
 			_minDist = _minDistReal;
 		};
