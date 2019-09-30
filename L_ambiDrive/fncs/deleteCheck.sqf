@@ -13,6 +13,7 @@
 *	Example: 
 *   call L_ambiDrive_fnc_objectManager
 * =================================================*/
+private ["_maxDist"];
 params [
 	"_object"
 ];
